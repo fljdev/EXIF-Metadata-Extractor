@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <title>EXIF MetaData Extractor</title>
+    <script type="text/javascript" src="exif.js"></script>
+    <link rel="stylesheet" type="text/css" href="landing.css">
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcZbO_vKoHOBdok7GrujIHEd8RKU9tdd0&callback=initMap"
+    async defer></script>
+
+       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANd0KKKsp-KNKvYfXPk3XlqAMpnpMY34s&callback=initMap" async defer></script>
+       <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyBcZbO_vKoHOBdok7GrujIHEd8RKU9tdd0"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+       <script src="app.js"></script>
+</head>
+
+<body ng-app="app" ng-controller="Ctrl" onload="disableSubmit(); initFields()">
+
+<h1 align = "center">Enter a photo of the incident to update your form</h1>
+<div  id="upload" align = "center">
+   <input id="file" type="file" accept="image/*" multiple="multiple" onchange="angular.element(this).scope().inputChange(this)" />
+   <img id="image" />
+</div>
+
+      <table style="width:50%" border = "1" bgcolor="#E0E0E0 " align="center">
+          <tr>
+            <th>location</th>
+            <th>Date & Time</th>
+            <th>Phone</th>
+        </tr>
+        <tr>
+          <td><reverse-geocode></reverse-geocode></td>
+          <td>{{dateTaken}}</td>
+          <td>{{phoneDetails}}</td>
+        </tr>
+
+
+      </table>
+
+    <!-- <p>  eg {{latDec}} {{lonDec}}</p> -->
+
+<br><br>
+<table class ="t" align = "center">
+  <tr><td>Address Line 1</td><td><input type = "text" name = "address1" id="address1" size="70"/></td></tr>
+  <tr><td>City</td><td><input type = "text" name = 'city' id ='city' size="70"/></td></tr>
+  <tr><td>ZIP Code</td><td><input type = "text" name = "zip" id="zip" size="70"/></td></tr>
+  <tr><td>State</td><td><input type = "text" name = "state" name = "state" id="state"  size="70"/></td></tr>
+  <!-- <tr><td></td><td align = "center"><input type="submit" value="Submit" id="mySubmit" onclick="verification()"></td></tr> -->
+  <tr><td></td><td align = "center"><input type="submit" value="Submit" id="mySubmit" onclick="checkForm()"></td></tr>
+</table>
+
+<br>
+
+<div id="map"></div>
+
+
+
+
+</body>
+
+</html>

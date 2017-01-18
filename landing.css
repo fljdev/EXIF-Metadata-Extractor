@@ -1,0 +1,31 @@
+.upload {
+  display: inline-block;
+  padding: 5px;
+}
+.upload input {
+  display: none;
+}
+.upload input + label {
+  display: inline-block;
+  color: white;
+  padding: 10px;
+  border: 1px solid white;
+}
+.upload input + label:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+#map {
+  align:center;
+  height: 85%;
+  width: 75%;
+}
+
+html, body {
+
+  height: 100%;
+  width: 100%;
+  //margin: 50px;
+  //padding: 0;
+  background: white;
+}
